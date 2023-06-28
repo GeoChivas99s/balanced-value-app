@@ -10,17 +10,18 @@ function App() {
   return (
     <div className="App">
       <input
-        className="main-input"
+        className={`main-input ${ value && ( isBalancedExpression(value)  ?  "main-input-balanced"  : "main-input-not-balanced" )}`}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Insira a sua expressão ..."
       />
-
-      {value && (
-        <p>
-          A expressão {isBalancedExpression(value) ? "é" : "não é "} balanceada{" "}
-        </p>
-      )}
+      <div className="result-wrapper">
+        {value && (
+          <p>
+            A expressão {isBalancedExpression(value) ? "é " : "não é "}balanceada
+          </p>
+        )}
+      </div>
     </div>
   );
 }
