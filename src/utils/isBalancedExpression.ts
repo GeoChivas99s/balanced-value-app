@@ -1,10 +1,14 @@
-function isBalancedExpression(expression: string): boolean {
+function isBalancedExpression(expression: string) {
   const stack: string[] = [];
   const parentheses: { [key: string]: string } = {
     "(": ")",
     "[": "]",
     "{": "}",
   };
+
+  if (!/[()\[\]{}]/.test(expression)) {
+    return;
+  }
 
   for (let char of expression) {
     if (parentheses[char]) {

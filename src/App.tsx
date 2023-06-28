@@ -1,16 +1,22 @@
 import React, { useEffect, useState } from "react";
-import "./App.css";
 import { isBalancedExpression } from "./utils";
-function App() {
-  const [value, setValue] = useState<string>();
+import "./App.css";
 
-  console.log(value);
-  useEffect(() => {}, [value]);
+function App() {
+  
+  const [value, setValue] = useState<string>();
+  const ISBALANCEDRESPONSE = "A expressão é balanceada ✅";
+  const ISNOTBALANCEDRESPONSE = "A expressão não é balanceada ❌  ";
 
   return (
     <div className="App">
       <input
-        className={`main-input ${ value && ( isBalancedExpression(value)  ?  "main-input-balanced"  : "main-input-not-balanced" )}`}
+        className={`main-input ${
+          value &&
+          (isBalancedExpression(value)
+            ? "main-input-balanced"
+            : "main-input-not-balanced")
+        }`}
         value={value}
         onChange={(e) => setValue(e.target.value)}
         placeholder="Insira a sua expressão ..."
@@ -18,7 +24,9 @@ function App() {
       <div className="result-wrapper">
         {value && (
           <p>
-            A expressão {isBalancedExpression(value) ? "é " : "não é "}balanceada
+            {isBalancedExpression(value)
+              ? ISBALANCEDRESPONSE
+              : ISNOTBALANCEDRESPONSE}
           </p>
         )}
       </div>
