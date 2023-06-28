@@ -1,9 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useState } from "react";
 import { isBalancedExpression } from "./utils";
 import "./App.css";
 
 function App() {
-  
+
   const [value, setValue] = useState<string>();
   const ISBALANCEDRESPONSE = "A expressão é balanceada ✅";
   const ISNOTBALANCEDRESPONSE = "A expressão não é balanceada ❌  ";
