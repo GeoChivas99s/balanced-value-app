@@ -10,7 +10,7 @@
 https://balaced-value-app.netlify.app/
 
 
-## Usabilibilida 
+## Usabilibilide 
 
 Inserir a expressão dentro do input para validar se a expressão é banceada
 
