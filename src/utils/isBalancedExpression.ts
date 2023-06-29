@@ -6,9 +6,6 @@ function isBalancedExpression(expression: string) {
     "{": "}",
   };
 
-  if (!/\([^()]*\)/.test(expression)) {
-    return;
-  }
   for (let char of expression) {
     if (parentheses[char]) {
       stack.push(char);
